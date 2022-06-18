@@ -45,7 +45,6 @@ repos:
     language: system
     entry: flake8
     types: [python]
-    exclude: setup.py
 
   - id: pylint
     name: pylint
@@ -53,7 +52,6 @@ repos:
     language: system
     entry: pylint
     types: [python]
-    exclude: setup.py
 
 - repo: https://github.com/nbQA-dev/nbQA
   rev: 0.7.0
