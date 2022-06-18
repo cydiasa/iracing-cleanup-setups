@@ -5,17 +5,21 @@ load_dotenv()
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
-    '--dryrun', 
-    default=True, 
+    '--dryrun',
+    default=True,
     action='store_true',
     help="True by default. Pass in false to delete files"
 )
-parser.add_argument('--dry-run', default=True, action=argparse.BooleanOptionalAction)
+parser.add_argument(
+    '--dry-run',
+    default=True,
+    action=argparse.BooleanOptionalAction
+)
 args = parser.parse_args()
 root_path = os.getenv("IRACING_INSTALL_PATH")
 
 print("Script Start")
-if(args.dry_run == True):
+if(args.dry_run is True):
     print("Dry run -- Files will not be deleted")
 
 for folders in os.listdir(path=root_path):
@@ -29,5 +33,5 @@ for folders in os.listdir(path=root_path):
                     if(os.path.exists(file_path) and os.path.isfile(file_path)):
                         print("Deleting: " + file_path)
                         os.remove(file_path)
-                        
+
 print("Script Complete")
