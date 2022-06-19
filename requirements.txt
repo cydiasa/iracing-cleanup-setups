@@ -1,2 +1,5 @@
-python-dotenv
 argparse
+black
+isort
+mypy
+python-dotenv
